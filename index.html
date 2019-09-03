@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="CSS/style.css">
+  <title>Meu Caixa</title>
+
+</head>
+
+<body>
+  <h1>Meu Caixa</h1>
+  <div class="wraper">
+    <header id="caixaContainer">
+      <p>Receitas<span id="caixa"></span></p>
+      <p>Despesas<span id="exp"></span></p>
+      <p id="balancoP">Caixa<span id="balanco"></span></p>
+    </header>
+
+    <section id="busca">
+      <input type="text" name="busca" id="busca" placeholder="Buscar">
+    </section>
+
+    <section id="checkbox_adInfo">
+      <div id="botoes">
+        <input type="checkbox" name="filtro" id="apenasReceitas"> Apenas Receitas
+
+      </div>
+      <button id="botaoAddInfo">Add Info</button>
+      <div id="botoes">
+        Apenas Despesas
+        <input type="checkbox" name="filtro" id="apenasDespesas">
+      </div>
+
+    </section>
+
+    <div class="inputInfos">
+      <div id="texts">
+        <input type="text" name="titulo" id="titulo" placeholder="Titulo">
+        <input type="text" name="desc" id="desc" placeholder="Descrição">
+      </div>
+      <div id="radioBtns">
+        <input type="radio" name="tipoValor" id="receita" value="receita"><span>Receita</span>
+        <input type="radio" name="tipoValor" id="despesa" value="despesa" checked>Despesas
+
+      </div>
+
+      <input type="number" name="valor" id="valor" placeholder="R$">
+    </div>
+
+    <main id="info">
+
+  </div>
+  </main>
+  </div>
+
+  <script src="uuid.js"></script>
+  <script src="despesasFunctions.js"></script>
+  <script src="despesasApp.js"></script>
+</body>
+
+</html>
