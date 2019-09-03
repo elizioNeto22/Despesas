@@ -1,0 +1,52 @@
+@mixin fundo {
+  background: linear-gradient(180deg, #05668D -3.08%, rgba(5, 102, 141, 0.6) 100%) no-repeat center center/cover;
+}
+@mixin tela {
+  max-width: 1000px;
+  margin: auto;
+}
+
+@mixin separador5 {
+  margin: 5rem auto;
+}
+@mixin separador1 {
+  margin: 1.5rem auto;
+}
+
+@mixin borda{
+  border-radius: 5px;
+  border: none;
+}
+
+@mixin valor {
+  font-size: 2.2rem;
+  background: #c4c4c4;
+  padding: 1.5rem 2.5rem;
+}
+
+@mixin device($tamanho) {
+  @if $tamanho==mobile {
+    @media(max-width: 400px) {
+      @content;
+    }
+  }
+
+  @else if $tamanho==tablet {
+    @media(max-width: 800px) {
+      @content;
+    }
+  }
+
+  @else if $tamanho==wide {
+    @media(max-width: 900px) {
+      @content;
+    }
+  }
+}
+
+@mixin titulo-grande {
+  font-size: 3em;
+  font-weight: bold;
+  font-family: monospace;
+  height: 1;
+}

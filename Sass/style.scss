@@ -1,0 +1,272 @@
+@import '_mixins';
+@import '_variaveis';
+@import url(https://fonts.googleapis.com/css?family=Sanchez:regular,italic);
+:root{
+  @include device(tablet){
+    font-size: 8px;
+  };
+  @include device(mobile){
+    font-size: 5px;
+  };
+  font-size: 10px;
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Sanchez';
+  box-sizing: border-box;
+}
+body{
+  @include fundo;
+}
+h1{
+  @include tela;
+  text-align: center;
+  font-size: 5rem;
+  margin-top: 5rem;
+  border-bottom: 2px solid #A8DADC;
+}
+// WRAPER
+
+.wraper{
+  max-width: 1200px;
+  margin: 5rem auto 50rem auto;
+  padding: 2rem;
+  background: rgb(228, 83, 95);
+  box-shadow: 0px 4px 5px rgba(94, 94, 94, 1);
+  @include borda;
+}
+// HEADER
+
+#caixaContainer{
+  @include tela;
+  @include separador5;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.4rem;
+  p{
+    margin-left: 1rem;
+    background: #A8DADC;
+    color: rgb(100, 173, 65);
+    border-radius: 5px;
+    padding: 0.8rem 1.5rem;
+  }
+  p:nth-of-type(2){
+    color: #E63946;
+  }
+}
+
+// BUSCA
+
+#busca{
+  @include device(mobile){
+    width: 70%;    
+  };
+  @include device(tablet){
+    width: 70%;    
+  };
+  @include tela;
+  @include borda;
+  margin-top: 3rem;
+  width: 60%;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+// Checkboxes
+
+#checkbox_adInfo{
+  @include tela;
+  @include separador5;
+  display: flex;
+  justify-content: space-between;
+  @include device(tablet){
+    justify-content: space-around;    
+  };
+  #botoes{
+    @include device(mobile){
+      font-size: 1.6rem;  
+      justify-content: flex-end;
+    };
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    #apenasReceitas, #apenasDespesas{
+      @include device(mobile){
+        transform: scale(1.2);
+      };
+      transform: scale(1.5);
+      height: 25px;
+      width: 25px;
+      border: red;
+      background-color: #eee;
+    }
+  }
+  }
+  #botaoAddInfo{
+    @include device(mobile){
+      font-size: 2.4rem;
+      padding: 1rem 12rem;  
+    };
+    @include borda;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 1rem 10rem;
+  }
+
+  // Add Info Inputs
+
+  .inputInfos{
+    @include tela;
+    @include separador5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @include device(mobile){
+      flex-direction: column;
+      width: 100%;
+      height: 50%;
+    };
+    @include device(tablet){
+      flex-direction: column;
+      width: 100%;
+      height: 50%; 
+    };
+    #texts{
+      
+      display: flex;
+      @include device(mobile){
+        flex-direction: column;
+        margin: 1.5rem 0;
+        justify-content: center;
+        align-items: center;
+      };
+      @include device(tablet){
+        flex-direction: column;
+        margin: 1.5rem 0;
+        justify-content: center;
+        align-items: center;
+      };
+    }
+    #titulo, #desc{
+      @include device(mobile){
+        width: 20px;
+        margin: 1.5rem 0;
+      };
+      @include device(tablet){
+        width: 100%;
+        margin: 1.5rem 0;
+      };
+      @include borda;
+      padding: 0.5rem 1rem;
+      width: 300px;
+      margin: 0 1rem;
+    }
+    #valor{
+      @include device(mobile){
+        width: 50%;
+        margin: 1.5rem 0;
+      };
+      @include device(tablet){
+        width: 30%;
+        margin: 1.5rem 0;
+      };
+      @include borda;
+      padding: 0.5rem 1rem;
+      width: 10%;
+    }
+    #radioBtns{
+      @include device(mobile){
+        font-size: 2rem;
+      };
+      @include device(tablet){
+        font-size: 2rem;;
+      };
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+    }
+    #receita, #despesa{
+      @include device(mobile){
+        margin-left: 2rem;
+        transform: scale(1);
+        height: 25px;
+        width: 25px;
+        border: red;
+        background-color: #eee;
+      };
+      @include device(tablet){
+      
+        transform: scale(1);
+        height: 25px;
+        width: 25px;
+        border: red;
+        background-color: #eee;
+      };
+      margin-left: 2rem;
+      transform: scale(1.5);
+      height: 25px;
+      width: 25px;
+      border: red;
+      background-color: #eee;
+    }
+  }
+
+// Info
+
+#info{
+  display: flex;
+  flex-direction: column;
+  #infoBox{
+    @include device(mobile){
+      width: 75%;
+    };
+    @include device(tablet){
+      width: 75%;
+    };
+    @include tela;
+    @include borda;
+    @include separador1;
+    box-shadow: 0px 4px 5px rgba(94, 94, 94, 0.5);
+    width: 50%;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #A8DADC;
+    #textoBox{
+      display: flex;
+      flex-direction: column;
+    }
+    #botaoDeletar{
+      @include borda;
+      cursor: pointer;
+      font-size: 2rem;
+      padding: 1rem 1rem;
+    }
+    #tituloBox{
+      @include device(mobile){
+        font-size: 3rem;
+      };
+      @include device(tablet){
+        font-size: 3rem;
+      };
+      font-size: 2.4rem;
+    }
+    #descBox{
+      @include device(mobile){
+        font-size: 2rem;
+      };
+      @include device(tablet){
+        font-size: 2rem;
+      };
+      font-size: 1.4rem;
+      color: #797878;
+    }
+    #valorBox{
+      @include borda;
+      @include valor;
+    }
+  }
+}
+
