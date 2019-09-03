@@ -41,15 +41,7 @@ const attInfos2 = function (list, vdd) {
     render(caixa, filtro)
     saveInfos(caixa)
   })
-  let hash
-  let editar = document.createElement('button')
-  editar.setAttribute('id', 'botaoEditar')
-  editar.textContent = 'editar'
-  editar.addEventListener('click', function (e) {
-    location.assign(`edit.html#${hash}`)
 
-  })
-  newBox.appendChild(editar)
 
   let txtBox = document.createElement('div')
   txtBox.setAttribute('id', 'textoBox')
@@ -81,10 +73,36 @@ const attInfos2 = function (list, vdd) {
 
 }
 
+// const funcaoFiltro = function (list, sortBy) {
+//   if (sortBy === 'ultimoPrimeiro') {
+//     return list.sort(function (a, b) {
+//       if (a.criacao < b.criacao) {
+//         return 1
+//       } else if (a.criacao > b.criacao) {
+//         return -1
+//       } else {
+//         return 0
+//       }
+//     })
+//   } else if (sortBy === 'primeiroPrimeiro') {
+//     return list.sort(function (a, b) {
+//       if (a.criacao < b.criacao) {
+//         return -1
+//       } else if (a.criacao > b.criacao) {
+//         return -1
+//       } else {
+//         return 0
+//       }
+//     })
+//   } else {
+//     return caixa
+//   }
+// }
+
 
 
 const render = function (list, listaBusca) {
-  gerarItens(caixa)
+
   if (document.querySelector('#apenasReceitas').checked) {
     const buscados = list.filter(function (item) {
       return item.titulo.toLowerCase().includes(listaBusca.searchedItem.toLowerCase()) && item.status === true || item.desc.toLowerCase().includes(listaBusca.searchedItem.toLowerCase()) && item.status === true || item.valor == listaBusca.searchedItem && item.status === true
@@ -179,6 +197,18 @@ const filtroDespesas = function (list) {
   despesas.forEach(function (vdd) {
     attInfos2(despesas, vdd)
   })
+
+}
+const filtroUltimo = function (list) {
+  list.sort(function (a, b) {
+    if (a.criacao < b.criacao) {
+      return 1
+    } else if (a.criacao > b.criacao) {
+      return -1
+    } else {
+      return 0
+    }
+  })
 }
 
 
@@ -188,3 +218,68 @@ const resetarCampos = function () {
   document.querySelector('#titulo').value = ""
   document.querySelector('#desc').value = ""
 }
+
+
+
+// gerarItens(caixa)
+// saveInfos(caixa)
+// 
+
+const teste = new Date('2001-02-21T06:25:01')
+// // const teste2 = Date.now()
+// const teste3 = new Date('2001-02-21T06:26:01')
+// // console.log(teste.getTime())
+// // console.log(teste2)
+// // console.log(teste3)
+// const timestamp1 = teste.getTime()
+// const myDate = new Date(timestamp1)
+// // console.log(myDate)
+
+// const timestamp3 = teste3.getTime()
+// // const myDate3 = new Date(timestamp3)
+// console.log(timestamp1)
+// console.log(timestamp3)
+// if (timestamp3 < timestamp1) {
+//     console.log(teste3.toString())
+// } else if (timestamp1 < timestamp3) {
+//     console.log(teste.toString())
+// }
+// // console.log(myDate3.getMilliseconds())
+
+// //Fazer push com myDate(getMIlliseconds)
+// // A PARTE FINAL DO TESTE3 É O MESMO DOS OUTROS 2 
+
+
+// // const user = {
+// //   name: 'Elizio',
+// //   idade: 26
+// // }
+
+// // const userJason = JSON.stringify(user)
+
+// // console.log(userJason)
+
+// // localStorage.setItem('user', userJason)
+// // const gg = localStorage.getItem('user')
+// // const userParsed = JSON.parse(gg)
+// // console.log(`${userParsed.name} is ${userParsed.idade}`)
+
+
+
+
+// // testar let caixa = JSON.parse(localStorage.getItem('caixa'))
+
+// /* Para ARRAY: tipo o forEach
+// function exemplo (){
+//   for(item of array){
+//     clg(item) → vai retornar para item cada item do array, uma callback
+//   }*/
+
+
+// ///////////////////////////////////////////////////////////////////////////
+// // MOMENT LIB
+// // const now = moment()
+// // // 1º é a quantidade e o 2º é o valor
+// // const niver = moment("1993-04-22")
+
+// // console.log(niver.format("MMM D, YYYY"))
