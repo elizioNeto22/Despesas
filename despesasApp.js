@@ -5,8 +5,10 @@ document.querySelector('#apenasDespesas').checked = false
 resetarCampos()
 
 const filtro = {
-  searchedItem: ''
+  searchedItem: '',
+  sorted: '',
 }
+
 
 let ident = 0
 let receitas = 0
@@ -28,7 +30,7 @@ let addInfo = document.querySelector('#botaoAddInfo').addEventListener('click', 
   let descInput = document.querySelector('#desc').value
   let receita = document.querySelector('#receita')
   let despesa = document.querySelector('#despesa')
-
+  let tempoCriacao = moment().valueOf()
   if (receita.checked) {
     caixa.push({
       titulo: tituloInput,
@@ -38,6 +40,7 @@ let addInfo = document.querySelector('#botaoAddInfo').addEventListener('click', 
       expenses: 0,
       identificador: uuidv4(),
       status: true,
+      criacao: tempoCriacao,
     })
     saveInfos(caixa)
     gerarItens(caixa)
@@ -52,6 +55,7 @@ let addInfo = document.querySelector('#botaoAddInfo').addEventListener('click', 
       incomes: 0,
       identificador: uuidv4(),
       status: false,
+      criacao: tempoCriacao,
     })
     saveInfos(caixa)
     gerarItens(caixa)
@@ -89,19 +93,3 @@ document.querySelector('#apenasDespesas').addEventListener('change', function (e
     render(caixa, filtro)
   }
 })
-
-
-
-// const user = {
-//   name: 'Elizio',
-//   idade: 26
-// }
-
-// const userJason = JSON.stringify(user)
-
-// console.log(userJason)
-
-// localStorage.setItem('user', userJason)
-// const gg = localStorage.getItem('user')
-// const userParsed = JSON.parse(gg)
-// console.log(`${userParsed.name} is ${userParsed.idade}`)
