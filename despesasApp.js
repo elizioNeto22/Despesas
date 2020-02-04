@@ -1,3 +1,5 @@
+
+
 let caixa = savedNotes()
 
 document.querySelector('#apenasReceitas').checked = false
@@ -18,9 +20,7 @@ gerarItens(caixa)
 saveInfos(caixa)
 
 render(caixa, filtro)
-// caixa.forEach(function(item){
-//   attInfos(caixa)
-// })
+
 
 
 // AddInfo
@@ -78,7 +78,7 @@ document.querySelector('#apenasReceitas').addEventListener('change', function (e
     document.querySelector('#apenasDespesas').checked = false
     filtroReceitas(caixa)
     saveInfos(caixa)
-  } else if (e.target.checked == false) {
+  } else if (!e.target.checked) {
     render(caixa, filtro)
   }
 })
@@ -89,7 +89,7 @@ document.querySelector('#apenasDespesas').addEventListener('change', function (e
     document.querySelector('#apenasReceitas').checked = false
     filtroDespesas(caixa)
     saveInfos(caixa)
-  } else if (e.target.checked == false) {
+  } else if (!e.target.checked) {
     render(caixa, filtro)
   }
 })

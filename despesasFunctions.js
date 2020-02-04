@@ -1,3 +1,5 @@
+'use strict'
+
 const gerarItens = (list) => {
 
   receitas = 0
@@ -68,7 +70,7 @@ const attInfos2 = function (list, vdd) {
       vv.style.color = '#E63946'
     }
     vv.innerHTML = vdd.valor
-    hash = vdd.identificador
+    // hash = vdd.identificador
   })
 
 }
@@ -94,13 +96,16 @@ const render = (list, listaBusca) => {
   }
 }
 
+
 const savedNotes = () => {
   const infosJSON = localStorage.getItem('caixa')
-  if (infosJSON != null) {
-    return JSON.parse(infosJSON)
-  } else {
+
+  try {
+    return infosJSON ? JSON.parse(infosJSON) : []
+  } catch (e) {
     return []
   }
+
 }
 
 const saveInfos = (list) => {
